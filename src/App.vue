@@ -1,21 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <b-container fluid>
+      <b-navbar type="light" class="app-header">
+        <b-navbar-brand href="/" class="app-logo">LyftLog</b-navbar-brand>
+        <b-navbar-nav>
+          <b-nav-item right to="history">View Log History</b-nav-item>
+        </b-navbar-nav>
+      </b-navbar>
+    </b-container>
+    <b-container class="h-100" fluid>
+      <router-view></router-view>
+    </b-container>
   </div>
 </template>
 
@@ -24,7 +19,7 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      title: 'Lyft Log App'
     }
   }
 }
@@ -40,21 +35,14 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
-  font-weight: normal;
+.app-header {
+  background: #ffe4e1;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.app-logo {
+  font-family: sans-serif;
+  font-weight: 900;
+  letter-spacing: -.02rem;
+  color: #2e2e2e;
 }
 </style>
